@@ -4,8 +4,6 @@ source "https://rubygems.org"
 if RUBY_VERSION == "1.9.2"
   # because of https://github.com/railsbp/rails_best_practices/blob/master/rails_best_practices.gemspec
   gem "activesupport", "~> 3.2"
-  # because of https://github.com/troessner/reek/issues/334
-  gem "reek", "~> 1.4.0"
   # rbp -> as -> i18n
   gem 'i18n', '0.6.11'
   gem "parallel", "= 1.3.3" # 1.3.4 disallows 1.9.2

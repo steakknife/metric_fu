@@ -14,12 +14,12 @@ module MetricFu
       end
     end
 
-    def run!(files, config_files)
-      examiner.new(files, config_files)
+    def run!(files, _config_files)
+      files.map { |file| examiner.new(Pathname.new(file), []) }
     end
 
     def analyze
-      @matches = @output.smells.group_by(&:source).collect do |file_path, smells|
+      @matches = @output.map(&:smells).flatten.group_by(&:source).collect do |file_path, smells|
         { file_path: file_path,
           code_smells: analyze_smells(smells) }
       end

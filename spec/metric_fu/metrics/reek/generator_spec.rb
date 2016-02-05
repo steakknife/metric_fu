@@ -100,7 +100,8 @@ describe MetricFu::ReekGenerator do
                             lines: [6, 9])
         ]
         @lines = instance_double(@examiner, smells: @smells)
-        @reek.instance_variable_set(:@output, @lines)
+        @output = [@lines]
+        @reek.instance_variable_set(:@output, @output)
         @matches = @reek.analyze
       end
 
@@ -144,7 +145,8 @@ describe MetricFu::ReekGenerator do
                    lines: [2, 4]),
         ]
         @lines = instance_double(@examiner, smells: @smells)
-        @reek.instance_variable_set(:@output, @lines)
+        @output = [@lines]
+        @reek.instance_variable_set(:@output, @output)
         @matches = @reek.analyze
       end
 
@@ -157,7 +159,8 @@ describe MetricFu::ReekGenerator do
     context "without reek warnings" do
       before :each do
         @lines = instance_double(@examiner, smells: [])
-        @reek.instance_variable_set(:@output, @lines)
+        @output = [@lines]
+        @reek.instance_variable_set(:@output, @output)
         @matches = @reek.analyze
       end
 
