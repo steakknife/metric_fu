@@ -13,7 +13,7 @@ module MetricFu
         options[:continue] ? "--continue" : nil,
       ].compact
       @flogger = FlogCLI.new parse_options
-      @flogger.flog *options[:dirs_to_flog]
+      @flogger.flog *files_to_flog
     end
 
     def analyze
@@ -50,6 +50,18 @@ module MetricFu
           out[file][line] << { type: :flog, description: "Score of %.2f" % data[:score] }
         end
       end
+    end
+
+    private
+
+    def files_to_flog
+      options[:dirs_to_flog].flatten.map do |p|
+        if File.directory? p then
+          Dir[File.join(p, '**/*.{rb,rake}')]
+        else
+          p
+        end
+      end.flatten
     end
   end
 
