@@ -22,7 +22,6 @@ cache:
 build: off
 
 before_test:
-  - bundle env
   - ruby -v
   - gem -v
   - bundle -v
