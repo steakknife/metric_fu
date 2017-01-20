@@ -18,6 +18,7 @@ elsif RUBY_VERSION =~ /^1\.9\.3.*/
   gem "mime-types", "2.99.3"
   gem "rest-client", "1.8.0"
   gem "rubocop", platforms: :mri, groups: [:test, :local_development]
+  gem "addressable", "2.4.0"
 elsif RUBY_VERSION =~ /^1\.9\.2.*/
   # because of https://github.com/railsbp/rails_best_practices/blob/master/rails_best_practices.gemspec
   gem "activesupport", "~> 3.2"
@@ -31,6 +32,7 @@ elsif RUBY_VERSION =~ /^1\.9\.2.*/
   gem "mime-types", "2.99.3"
   gem "rest-client", "1.8.0"
   gem "json", "~> 1.7"
+  gem "addressable", "2.4.0"
 end
 
 gemspec path: File.expand_path("..", __FILE__)
