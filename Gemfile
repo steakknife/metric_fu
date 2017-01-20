@@ -33,6 +33,7 @@ elsif RUBY_VERSION =~ /^1\.9\.2.*/
   gem "rest-client", "1.8.0"
   gem "json", "~> 1.7"
   gem "addressable", "2.4.0"
+  gem "rainbow", "2.1.0"
 end
 
 gemspec path: File.expand_path("..", __FILE__)
