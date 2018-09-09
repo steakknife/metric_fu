@@ -34,10 +34,8 @@ Gem::Specification.new do |s|
   s.files                       = files
   s.test_files                  = test_files
   s.executables                 = executables
-  s.default_executable          = "metric_fu"
   s.require_paths               = ["lib"]
 
-  s.has_rdoc                    = true
   s.extra_rdoc_files            = ["HISTORY.md", "CONTRIBUTING.md", "TODO.md", "MIT-LICENSE"]
   s.rdoc_options                = ["--main", "README.md"]
 
